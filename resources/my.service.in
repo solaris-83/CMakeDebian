@@ -1,0 +1,19 @@
+[Unit]
+Description=My Service
+After=default.target
+
+[Service]
+# Declare that the service started by ExecStart is the main service
+Type=simple
+# Do not consider service to be active when executable is no longer running
+RemainAfterExit=no
+ExecStart=/usr/bin/my-app
+ExecReload=/usr/bin/killall -TERM my-app; /usr/bin/my-app
+ExecStop=/usr/bin/killall -TERM my-app
+# Restart service on failure
+Restart=on-failure
+# Wait for 5 seconds before restarting
+RestartSec=5
+
+[Install]
+WantedBy=default.target
