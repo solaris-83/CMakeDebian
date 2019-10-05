@@ -26,6 +26,8 @@ include(GNUInstallDirs)
 #------------------------------------------------------------
 add_subdirectory(resources)
 add_subdirectory(backend)
+message("CMAKE_INSTALL_FULL_BINDIR --> ${CMAKE_INSTALL_FULL_BINDIR}")
+message("CMAKE_CURRENT_SOURCE_DIR --> ${CMAKE_CURRENT_SOURCE_DIR}")
 #------------------------------------------------------------
 
 #
